@@ -149,7 +149,7 @@ func summarise(assessment Assessment) Summary {
 		}
 	}
 	summary.Safe = summary.GasTripCount == 0 && summary.TrippedCircuits == 0 &&
-		summary.VentilationOK && summary.RefusedPermits == 0 &&
+		summary.VentilationOK && summary.Unaccounted == 0 && summary.RefusedPermits == 0 &&
 		summary.OverdueInspections == 0
 	if summary.Safe {
 		summary.Headline = fmt.Sprintf("%d point(s) usable of %d, no trip, ventilation adequate",
