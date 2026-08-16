@@ -1,0 +1,660 @@
+{
+  "schema_version": "mineguard/v1",
+  "mine_id": "MG-DEMO-01",
+  "label": "Fictional demonstration colliery",
+  "districts": [
+    {
+      "district_id": "D-NORTH",
+      "label": "North district",
+      "seam": "Upper seam"
+    },
+    {
+      "district_id": "D-SOUTH",
+      "label": "South district",
+      "seam": "Upper seam"
+    }
+  ],
+  "faces": [
+    {
+      "face_id": "F-N101",
+      "district_id": "D-NORTH",
+      "label": "North longwall 101",
+      "intake_junction": "J-N1",
+      "return_junction": "J-N2",
+      "planned_persons": 8,
+      "equipment_kw": 250,
+      "min_airflow_m3s": 12
+    },
+    {
+      "face_id": "F-S201",
+      "district_id": "D-SOUTH",
+      "label": "South development 201",
+      "intake_junction": "J-S1",
+      "return_junction": "J-S2",
+      "planned_persons": 6,
+      "equipment_kw": 180,
+      "min_airflow_m3s": 10
+    }
+  ],
+  "junctions": [
+    {
+      "junction_id": "J-DOWNCAST",
+      "label": "Downcast shaft collar",
+      "depth_m": 0,
+      "surface": true
+    },
+    {
+      "junction_id": "J-EXHAUST",
+      "label": "Upcast shaft collar",
+      "depth_m": 0,
+      "surface": true
+    },
+    {
+      "junction_id": "J-MAIN",
+      "label": "Main intake split",
+      "depth_m": 420
+    },
+    {
+      "junction_id": "J-N1",
+      "label": "North face intake",
+      "depth_m": 430
+    },
+    {
+      "junction_id": "J-N2",
+      "label": "North face return",
+      "depth_m": 432
+    },
+    {
+      "junction_id": "J-S1",
+      "label": "South face intake",
+      "depth_m": 445
+    },
+    {
+      "junction_id": "J-S2",
+      "label": "South face return",
+      "depth_m": 447
+    },
+    {
+      "junction_id": "J-RETURN",
+      "label": "Main return collector",
+      "depth_m": 415
+    }
+  ],
+  "airways": [
+    {
+      "airway_id": "A-DOWNCAST",
+      "from_junction": "J-DOWNCAST",
+      "to_junction": "J-MAIN",
+      "label": "Downcast shaft",
+      "length_m": 430,
+      "area_m2": 22,
+      "resistance_ns2m8": 0.0021,
+      "fan_pressure_pa": 0
+    },
+    {
+      "airway_id": "A-N-INTAKE",
+      "from_junction": "J-MAIN",
+      "to_junction": "J-N1",
+      "label": "North intake road",
+      "length_m": 1200,
+      "area_m2": 14,
+      "resistance_ns2m8": 0.0135
+    },
+    {
+      "airway_id": "A-N-FACE",
+      "from_junction": "J-N1",
+      "to_junction": "J-N2",
+      "label": "North longwall face",
+      "length_m": 240,
+      "area_m2": 9,
+      "resistance_ns2m8": 0.0182
+    },
+    {
+      "airway_id": "A-N-RETURN",
+      "from_junction": "J-N2",
+      "to_junction": "J-RETURN",
+      "label": "North return road",
+      "length_m": 1250,
+      "area_m2": 13,
+      "resistance_ns2m8": 0.0146
+    },
+    {
+      "airway_id": "A-S-INTAKE",
+      "from_junction": "J-MAIN",
+      "to_junction": "J-S1",
+      "label": "South intake road",
+      "length_m": 1500,
+      "area_m2": 12,
+      "resistance_ns2m8": 0.0198,
+      "regulator": true
+    },
+    {
+      "airway_id": "A-S-FACE",
+      "from_junction": "J-S1",
+      "to_junction": "J-S2",
+      "label": "South development face",
+      "length_m": 180,
+      "area_m2": 8,
+      "resistance_ns2m8": 0.0211
+    },
+    {
+      "airway_id": "A-S-RETURN",
+      "from_junction": "J-S2",
+      "to_junction": "J-RETURN",
+      "label": "South return road",
+      "length_m": 1540,
+      "area_m2": 12,
+      "resistance_ns2m8": 0.0205
+    },
+    {
+      "airway_id": "A-UPCAST",
+      "from_junction": "J-RETURN",
+      "to_junction": "J-EXHAUST",
+      "label": "Upcast shaft",
+      "length_m": 415,
+      "area_m2": 20,
+      "resistance_ns2m8": 0.0024,
+      "fan_pressure_pa": 2400
+    }
+  ],
+  "points": [
+    {
+      "point_id": "P-N101-CH4-GB",
+      "label": "North face general body methane",
+      "quantity": "methane",
+      "area_kind": "working_face",
+      "area_id": "F-N101",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 5,
+      "threshold": {
+        "warn": 1,
+        "trip": 1.5,
+        "direction": "above"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-N101-CH4-ROOF",
+      "label": "North face roof methane",
+      "quantity": "methane",
+      "area_kind": "working_face",
+      "area_id": "F-N101",
+      "placement": "roof",
+      "range_low": 0,
+      "range_high": 5,
+      "threshold": {
+        "warn": 1,
+        "trip": 1.5,
+        "direction": "above"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-N101-CO",
+      "label": "North face carbon monoxide",
+      "quantity": "carbon_monoxide",
+      "area_kind": "working_face",
+      "area_id": "F-N101",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 200,
+      "threshold": {
+        "warn": 15,
+        "trip": 30,
+        "direction": "above"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-N101-O2",
+      "label": "North face oxygen",
+      "quantity": "oxygen",
+      "area_kind": "working_face",
+      "area_id": "F-N101",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 25,
+      "threshold": {
+        "warn": 19.5,
+        "trip": 19,
+        "direction": "below"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-N101-TEMP",
+      "label": "North face dry bulb temperature",
+      "quantity": "temperature",
+      "area_kind": "working_face",
+      "area_id": "F-N101",
+      "placement": "general_body",
+      "range_low": -10,
+      "range_high": 60,
+      "threshold": {
+        "warn": 32,
+        "trip": 38,
+        "direction": "above"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-S201-CH4-GB",
+      "label": "South face general body methane",
+      "quantity": "methane",
+      "area_kind": "working_face",
+      "area_id": "F-S201",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 5,
+      "threshold": {
+        "warn": 1,
+        "trip": 1.5,
+        "direction": "above"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-S201-CH4-ROOF",
+      "label": "South face roof methane",
+      "quantity": "methane",
+      "area_kind": "working_face",
+      "area_id": "F-S201",
+      "placement": "roof",
+      "range_low": 0,
+      "range_high": 5,
+      "threshold": {
+        "warn": 1,
+        "trip": 1.5,
+        "direction": "above"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-S201-CO",
+      "label": "South face carbon monoxide",
+      "quantity": "carbon_monoxide",
+      "area_kind": "working_face",
+      "area_id": "F-S201",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 200,
+      "threshold": {
+        "warn": 15,
+        "trip": 30,
+        "direction": "above"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-S201-O2",
+      "label": "South face oxygen",
+      "quantity": "oxygen",
+      "area_kind": "working_face",
+      "area_id": "F-S201",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 25,
+      "threshold": {
+        "warn": 19.5,
+        "trip": 19,
+        "direction": "below"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-S201-TEMP",
+      "label": "South face dry bulb temperature",
+      "quantity": "temperature",
+      "area_kind": "working_face",
+      "area_id": "F-S201",
+      "placement": "general_body",
+      "range_low": -10,
+      "range_high": 60,
+      "threshold": {
+        "warn": 32,
+        "trip": 38,
+        "direction": "above"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-J-MAIN-DP",
+      "label": "Main split differential pressure",
+      "quantity": "pressure",
+      "area_kind": "junction",
+      "area_id": "J-MAIN",
+      "placement": "intake",
+      "range_low": -2000,
+      "range_high": 2000,
+      "threshold": {
+        "warn": 1500,
+        "trip": 1800,
+        "direction": "above"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-A-DOWNCAST",
+      "label": "Downcast shaft airflow",
+      "quantity": "airflow",
+      "area_kind": "airway",
+      "area_id": "A-DOWNCAST",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 80,
+      "threshold": {
+        "warn": 8,
+        "trip": 5,
+        "direction": "below"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-A-N-INTAKE",
+      "label": "North intake airflow",
+      "quantity": "airflow",
+      "area_kind": "airway",
+      "area_id": "A-N-INTAKE",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 80,
+      "threshold": {
+        "warn": 8,
+        "trip": 5,
+        "direction": "below"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-A-N-FACE",
+      "label": "North face airflow",
+      "quantity": "airflow",
+      "area_kind": "airway",
+      "area_id": "A-N-FACE",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 80,
+      "threshold": {
+        "warn": 8,
+        "trip": 5,
+        "direction": "below"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-A-N-RETURN",
+      "label": "North return airflow",
+      "quantity": "airflow",
+      "area_kind": "airway",
+      "area_id": "A-N-RETURN",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 80,
+      "threshold": {
+        "warn": 8,
+        "trip": 5,
+        "direction": "below"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-A-S-INTAKE",
+      "label": "South intake airflow",
+      "quantity": "airflow",
+      "area_kind": "airway",
+      "area_id": "A-S-INTAKE",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 80,
+      "threshold": {
+        "warn": 8,
+        "trip": 5,
+        "direction": "below"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-A-S-FACE",
+      "label": "South face airflow",
+      "quantity": "airflow",
+      "area_kind": "airway",
+      "area_id": "A-S-FACE",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 80,
+      "threshold": {
+        "warn": 8,
+        "trip": 5,
+        "direction": "below"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-A-S-RETURN",
+      "label": "South return airflow",
+      "quantity": "airflow",
+      "area_kind": "airway",
+      "area_id": "A-S-RETURN",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 80,
+      "threshold": {
+        "warn": 8,
+        "trip": 5,
+        "direction": "below"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    },
+    {
+      "point_id": "P-A-UPCAST",
+      "label": "Upcast shaft airflow",
+      "quantity": "airflow",
+      "area_kind": "airway",
+      "area_id": "A-UPCAST",
+      "placement": "general_body",
+      "range_low": 0,
+      "range_high": 80,
+      "threshold": {
+        "warn": 8,
+        "trip": 5,
+        "direction": "below"
+      },
+      "calibration": {
+        "at": "2026-08-10T06:00:00Z",
+        "valid_days": 30,
+        "zero_drift": 0.01,
+        "span_drift_pct": 1.5,
+        "technician": "T. Ndlovu"
+      },
+      "mandatory": true
+    }
+  ],
+  "circuits": [
+    {
+      "circuit_id": "C-N101-SHEARER",
+      "label": "North longwall shearer",
+      "area_kind": "working_face",
+      "area_id": "F-N101",
+      "guard_points": [
+        "P-N101-CH4-GB",
+        "P-N101-CH4-ROOF",
+        "P-N101-CO"
+      ],
+      "requires_ventilation": true
+    },
+    {
+      "circuit_id": "C-S201-ROADHEADER",
+      "label": "South roadheader",
+      "area_kind": "working_face",
+      "area_id": "F-S201",
+      "guard_points": [
+        "P-S201-CH4-GB",
+        "P-S201-CH4-ROOF",
+        "P-S201-CO"
+      ],
+      "requires_ventilation": true
+    },
+    {
+      "circuit_id": "C-N-BELT",
+      "label": "North return conveyor",
+      "area_kind": "airway",
+      "area_id": "A-N-RETURN",
+      "guard_points": [
+        "P-A-N-RETURN"
+      ]
+    }
+  ],
+  "inspections": [
+    {
+      "inspection_id": "I-N101-SUPPORT",
+      "subject": "roof support",
+      "area_kind": "working_face",
+      "area_id": "F-N101",
+      "interval_hours": 24,
+      "last_done_at": "2026-08-15T02:00:00Z"
+    },
+    {
+      "inspection_id": "I-VENT-DOORS",
+      "subject": "ventilation doors",
+      "area_kind": "airway",
+      "area_id": "A-N-INTAKE",
+      "interval_hours": 168,
+      "last_done_at": "2026-08-12T06:00:00Z"
+    },
+    {
+      "inspection_id": "I-DETECTOR-CAL",
+      "subject": "handheld detector calibration",
+      "area_kind": "surface",
+      "area_id": "SURFACE-STORE",
+      "interval_hours": 720,
+      "last_done_at": "2026-08-01T08:00:00Z"
+    }
+  ]
+}

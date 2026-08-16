@@ -1,0 +1,32 @@
+[
+  {
+    "permit_id": "PM-0001",
+    "kind": "hot_work",
+    "area_kind": "working_face",
+    "area_id": "F-N101",
+    "window": {
+      "from": "2026-08-15T08:00:00Z",
+      "to": "2026-08-15T15:00:00Z"
+    },
+    "required_points": [
+      "P-N101-CH4-GB",
+      "P-N101-CH4-ROOF",
+      "P-N101-CO"
+    ],
+    "issuer": "I. Pillay"
+  },
+  {
+    "permit_id": "PM-0002",
+    "kind": "seal_inspection",
+    "area_kind": "airway",
+    "area_id": "A-N-RETURN",
+    "window": {
+      "from": "2026-08-15T10:00:00Z",
+      "to": "2026-08-15T14:30:00Z"
+    },
+    "required_points": [
+      "P-A-N-RETURN"
+    ],
+    "issuer": "G. Adeyemi"
+  }
+]

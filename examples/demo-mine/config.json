@@ -1,0 +1,45 @@
+{
+  "label": "demo-mine-policy",
+  "readings": {
+    "default_stale_minutes": 15,
+    "frozen_samples": 6,
+    "frozen_tolerance": 0.0001,
+    "max_span_drift_pct": 10,
+    "range_margin_pct": 2
+  },
+  "gas": {
+    "window_minutes": 120,
+    "rate_of_rise_window_minutes": 30,
+    "rate_of_rise_pct_per_hour": 0.5,
+    "lower_explosive_limit_pct": 5,
+    "upper_explosive_limit_pct": 15,
+    "layering_margin_pct": 0.5,
+    "oxygen_deficient_pct": 19,
+    "co_heating_ppm": 24,
+    "min_samples_for_trend": 3
+  },
+  "ventilation": {
+    "balance_tolerance_m3s": 0.5,
+    "air_per_person_m3s": 0.1,
+    "air_per_kilowatt_m3s": 0.02,
+    "min_face_airflow_m3s": 3,
+    "recirculation_tolerance_m3s": 0.2
+  },
+  "interlock": {
+    "require_calibration": true,
+    "require_fresh": true,
+    "trip_hold_minutes": 30,
+    "allow_warn_operation": true
+  },
+  "personnel": {
+    "muster_grace_minutes": 45,
+    "max_face_occupancy": 12
+  },
+  "permits": {
+    "max_duration_hours": 8,
+    "require_fresh_points": true
+  },
+  "output": {
+    "decimals": 3
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "person_id": "W-001",
+    "name": "A. Mokoena",
+    "role": "shift overman",
+    "crew": "A"
+  },
+  {
+    "person_id": "W-002",
+    "name": "B. Sithole",
+    "role": "shearer operator",
+    "crew": "A"
+  },
+  {
+    "person_id": "W-003",
+    "name": "C. Dlamini",
+    "role": "support fitter",
+    "crew": "A"
+  },
+  {
+    "person_id": "W-004",
+    "name": "D. Naidoo",
+    "role": "electrician",
+    "crew": "A"
+  },
+  {
+    "person_id": "W-005",
+    "name": "E. Khumalo",
+    "role": "roadheader operator",
+    "crew": "B"
+  },
+  {
+    "person_id": "W-006",
+    "name": "F. Botha",
+    "role": "support fitter",
+    "crew": "B"
+  },
+  {
+    "person_id": "W-007",
+    "name": "G. Adeyemi",
+    "role": "ventilation officer",
+    "crew": "B"
+  },
+  {
+    "person_id": "W-008",
+    "name": "H. Nkosi",
+    "role": "general worker",
+    "crew": "B"
+  },
+  {
+    "person_id": "W-009",
+    "name": "I. Pillay",
+    "role": "deputy",
+    "crew": "A"
+  },
+  {
+    "person_id": "W-010",
+    "name": "J. Marais",
+    "role": "belt attendant",
+    "crew": "A"
+  }
+]
