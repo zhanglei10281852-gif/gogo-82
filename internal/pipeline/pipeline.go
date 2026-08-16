@@ -148,9 +148,15 @@ func summarise(assessment Assessment) Summary {
 			summary.UsablePoints++
 		}
 	}
+	// Safe is the all-clear the report headline and the process exit code are
+	// derived from. A muster that cannot account for every rostered person is a
+	// negative verdict even when gas, ventilation, interlocks, permits and
+	// inspections are clean: the headline must name the unaccounted people and
+	// the exit code must be non-zero, or a scheduler would treat a missing miner
+	// as routine.
 	summary.Safe = summary.GasTripCount == 0 && summary.TrippedCircuits == 0 &&
 		summary.VentilationOK && summary.RefusedPermits == 0 &&
-		summary.OverdueInspections == 0
+		summary.OverdueInspections == 0 && summary.Unaccounted == 0
 	if summary.Safe {
 		summary.Headline = fmt.Sprintf("%d point(s) usable of %d, no trip, ventilation adequate",
 			summary.UsablePoints, summary.Points)
